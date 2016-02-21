@@ -36,7 +36,7 @@ Summary:        Maven Shared Components
 URL:            http://maven.apache.org/shared/
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        19
-Release:        4.10%{?dist}
+Release:        4.11%{?dist}
 License:        ASL 2.0
 
 Source0:        https://github.com/apache/%{pkg_name}/archive/%{pkg_name}-components-%{version}.tar.gz
@@ -55,7 +55,7 @@ Maven Shared Components
 
 %prep
 %setup -q -n %{pkg_name}-%{pkg_name}-components-%{version}
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 chmod -R go=u-w *
 
@@ -64,13 +64,13 @@ chmod -R go=u-w *
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_build
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_install
 %{?scl:EOF}
@@ -80,6 +80,9 @@ set -e -x
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 19-4.11
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 19-4.10
 - maven33 rebuild
 
