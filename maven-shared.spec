@@ -36,12 +36,12 @@ Summary:        Maven Shared Components
 URL:            http://maven.apache.org/shared/
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        19
-Release:        4.11%{?dist}
+Release:        4.12%{?dist}
 License:        ASL 2.0
 
 Source0:        https://github.com/apache/%{pkg_name}/archive/%{pkg_name}-components-%{version}.tar.gz
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 
 BuildArch:      noarch
 
@@ -80,6 +80,9 @@ set -e -x
 %doc LICENSE.txt NOTICE.txt
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 19-4.12
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 19-4.11
 - maven33 rebuild #2
 
