@@ -5,7 +5,7 @@ Summary:        Maven Shared Components
 URL:            http://maven.apache.org/shared/
 Name:           %{?scl_prefix}maven-shared
 Version:        22
-Release:        4.1%{?dist}
+Release:        4.2%{?dist}
 License:        ASL 2.0
 BuildArch:      noarch
 
@@ -34,6 +34,9 @@ chmod -R go=u-w *
 %license LICENSE.txt NOTICE.txt
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 22-4.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 22-4.1
 - Automated package import and SCL-ization
 
